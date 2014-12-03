@@ -185,7 +185,7 @@ release.data structure
   },
   "hasAudio": true,
   "trackinfo": [
-    "(all tracks go here... see "trackinfo")"
+    "(all tracks go here... see 'trackinfo')"
   ],
   "url": "http://amandapalmer.bandcamp.com/album/an-evening-with-neil-gaiman-and-amanda-palmer"
 }
