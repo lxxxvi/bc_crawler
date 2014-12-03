@@ -1,6 +1,6 @@
 # BcCrawler
 
-A simple Ruby Gem to crawl bandcamp sites. It will load information about the artist/label/band, their releases (albums) and all tracks.
+A simple Ruby Gem to crawl bandcamp.com sites. It will load information about the artist/label/band, their releases (albums) and all tracks.
 
 ## Installation
 
@@ -47,15 +47,15 @@ main.releases.first
 
 ```ruby
 main.crawl
-Crawling https://amandapalmer.bandcamp.com//album/an-evening-with-neil-gaiman-and-amanda-palmer
-Crawling https://amandapalmer.bandcamp.com//album/theatre-is-evil-2
-Crawling https://amandapalmer.bandcamp.com//album/amanda-palmer-goes-down-under
-Crawling https://amandapalmer.bandcamp.com//album/amanda-palmer-performs-the-popular-hits-of-radiohead-on-her-magical-ukulele
-Crawling https://amandapalmer.bandcamp.com//album/nighty-night
-Crawling https://amandapalmer.bandcamp.com//album/who-killed-amanda-palmer
-Crawling https://amandapalmer.bandcamp.com//album/who-killed-amanda-palmer-alternate-tracks
-Crawling https://amandapalmer.bandcamp.com//album/map-of-tasmania-the-remix-project
-Crawling https://amandapalmer.bandcamp.com//album/7-series-part-3
+# Crawling https://amandapalmer.bandcamp.com//album/an-evening-with-neil-gaiman-and-amanda-palmer
+# Crawling https://amandapalmer.bandcamp.com//album/theatre-is-evil-2
+# Crawling https://amandapalmer.bandcamp.com//album/amanda-palmer-goes-down-under
+# Crawling https://amandapalmer.bandcamp.com//album/amanda-palmer-performs-the-popular-hits-of-radiohead-on-her-magical-ukulele
+# Crawling https://amandapalmer.bandcamp.com//album/nighty-night
+# Crawling https://amandapalmer.bandcamp.com//album/who-killed-amanda-palmer
+# Crawling https://amandapalmer.bandcamp.com//album/who-killed-amanda-palmer-alternate-tracks
+# Crawling https://amandapalmer.bandcamp.com//album/map-of-tasmania-the-remix-project
+# Crawling https://amandapalmer.bandcamp.com//album/7-series-part-3
 ```
 
 Certain information about releases and tracks can directly be accessed by attributes.
@@ -145,10 +145,10 @@ random_track.title_link
  => "/track/judy-blume-2"
 ```
 
+
 If the information above is not enough, you can access the entire data object from Bandcamp in the release.data attribute
 
-release.data structure looks like this
-
+release.data structure
 ```JSON
 {
   "artFullsizeUrl": "https://f1.bcbits.com/img/a3489132960_10.jpg",
@@ -184,20 +184,21 @@ release.data structure looks like this
       "download_desc_id": null
   },
   "hasAudio": true,
-  "trackinfo": [  (all tracks go here... see "trackinfo")  ],
+  "trackinfo": [
+    "(all tracks go here... see "trackinfo")"
+  ],
   "url": "http://amandapalmer.bandcamp.com/album/an-evening-with-neil-gaiman-and-amanda-palmer"
 }
 ```
 
 Assuming you want the "minimum_price" of a release
-
 ```ruby
 release.data['current']['minimum_price']
  => 10.0
 ```
 
-```JSON
 The "trackinfo" in release.data looks like this
+```JSON
 {
     "video_poster_url": null,
     "is_draft": false,
