@@ -2,7 +2,7 @@ module BcCrawler
   class Track
 
     attr_reader :duration, :track_num, :is_downloadable, :streaming,
-                :is_draft, :id, :title_link, :track_url, :file, :title, :url
+                :is_draft, :id, :title_link, :file, :title, :url
 
     def initialize(release, track)
       @release            = release
@@ -16,6 +16,15 @@ module BcCrawler
       @file               = track['file']
       @title              = track['title']
       @url                = "#{ BcCrawler::Helper.get_base_url(@release.url) }#{ track['title_link'] }"
+    end
+
+    def to_s
+      <<-EOF
+      URL : #{ @url }
+      Track number : #{ @track_num }
+      Track name : #{ @title }
+      Duration : #{ @duration }
+      EOF
     end
   end
 end
